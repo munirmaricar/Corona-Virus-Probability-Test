@@ -9,6 +9,10 @@ Munirudeen Maricar - 1806188193
 
 Wilson Hadi Junior - 1806241236
 
-Heroku Link:
+Link:
 
+Gitlab Repository:
+https://gitlab.com/intelligent-system-1/corona-virus-probability-test
+
+Heroku:
 https://is-group1.herokuapp.com/
