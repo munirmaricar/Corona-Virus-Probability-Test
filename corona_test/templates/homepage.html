@@ -1,20 +1,15 @@
 {% extends 'base.html' %}
-{% load static %}   
-{% block content %} 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Corona Virus Probability Test</title>
-</head>
-<body>
-    <div class="row one" id="landingpage">
-        <div class="col-md">
-            <h2 class="expl" id="e1">Lorem ipsum dolor sit amet?</h2>
-            <h1 class="expl" id="e2">Lorem ipsum?</h1>
-            <button id="testBtn">Take test</button>
-        </div>
+{% load static %}
+
+{% block title %}
+<title>Corona Virus Probability Test</title>
+{% endblock %}
+{% block content %}
+<div class="row one" id="landingpage">
+    <div class="col-md">
+        <h2 class="expl" id="e1">Lorem ipsum dolor sit amet?</h2>
+        <h1 class="expl" id="e2">Lorem ipsum?</h1>
+        <button id="testBtn">Take test</button>
     </div>
-</body>
-</html>
+</div>
 {% endblock %}
