@@ -1,18 +1,13 @@
-Intelligent Systems
-Group Project Corona Virus Probability Test - Group 1: Renegade
+# Welcome to Corona Virus Probability Detector!
 
-Anggrio Wildanhadi Sutopo - 1806173544
+> This is an application made by Group Renegade for the Group Assignment of Intelligent Systems course. The mentor responsible for our group is Maulana Wisnu. The members of our group are:
+>
+> - Anggrio Wildanhadi Sutopo - 1806173544
+> - I Made Gede Surya Nirvana Prima - 1806173550
+> - Munirudeen Maricar - 1806188193
+> - Wilson Hadi Junior - 1806241236
 
-I Made Gede Surya Nirvana Prima - 1806173550
+The links to various items we have created in the development of our application can be seen below:
 
-Munirudeen Maricar - 1806188193
-
-Wilson Hadi Junior - 1806241236
-
-Link:
-
-Gitlab Repository:
-https://gitlab.com/intelligent-system-1/corona-virus-probability-test
-
-Heroku:
-https://is-group1.herokuapp.com/
+1.  [GitLab Repository](https://gitlab.com/intelligent-system-1/corona-virus-probability-test)
+2.  [Website Link (**Heroku**)](https://is-group1.herokuapp.com/)
