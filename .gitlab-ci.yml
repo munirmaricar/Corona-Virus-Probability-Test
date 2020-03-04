@@ -3,7 +3,7 @@ stages:
   - test
   - deploy
 
-unit:
+UnitTest:
   stage: test
   image: python:3.6
   before_script:
@@ -24,5 +24,3 @@ Deployment:
     - gem install dpl
   script:
     - dpl --provider=heroku --app=$HEROKU_APPNAME --api-key=$HEROKU_APIKEY
-
-

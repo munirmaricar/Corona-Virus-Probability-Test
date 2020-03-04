@@ -15,23 +15,23 @@
     </div>
 </section>
 
-<div class="container-fluid" style="background-color: white">
-    <div class="container-fluid" style="height: 10vh;"></div>
+<div style="background-color: white; padding-top: 50px;">
+    <!-- <div class="container-fluid" style="height: 10vh;"></div> -->
     <div class="row">
         <div class="col-md-5">
-            <h1 class="expl" id="e2" style="color: #07309D">[image here]</h1>
+            <img src="{% static 'images/sickassbruh.png' %}" style="height: auto; width: 30vw; margin:30px;">
         </div>
         <div class="col-md-7">
             <h2 class="expl" id="e1" style="color: #07309D">What is Coronavirus?</h2>
             <div style="height: 10px; width: 15vw; background-color: #68FCCB; border-radius: 20px; margin-left: 10px;"></div>
             <br>
-            <ul>
+            <ul style="margin-left: 30px;">
                 <li>A member of the coronavirus family that has never been encountered before</li>
                 <li>Came from animals</li>
                 <li>Is zoonotic (can be transmitted between animals and people)</li>
             </ul>
             <button type="button" class="collapsible" id="testBtn" style="margin-bottom: 20px;">See Details</button>
-            <div class="content">
+            <div class="content" style="margin-right: 50px;">
                 <p>
                     Coronaviruses are actually a large family of viruses, but the common one (COVID-19) that has recently 
                     gone viral in early 2020 has not been identified in humans before.
@@ -46,6 +46,6 @@
                 </p>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 </div>
 {% endblock %}
