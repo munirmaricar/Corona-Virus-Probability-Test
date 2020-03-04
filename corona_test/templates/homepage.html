@@ -5,28 +5,46 @@
 <title>Coronavirus Probability Test</title>
 {% endblock %}
 {% block content %}
-<div class="row one" id="landingpage">
-    <div class="col-md">
-        <h2 class="expl" id="e1">Do you think you are infected with Coronavirus?</h2>
-        <h1 class="expl" id="e2">Take this Probability Test now!</h1>
-        <button id="testBtn">Click Here</button>
+<section>
+    <div class="row one" id="landingpage">
+        <div class="col-md">
+            <h2 class="expl" id="e1">Do you think you are infected with Coronavirus?</h2>
+            <h1 class="expl" id="e2">Take this Probability Test now!</h1>
+            <button id="testBtn">Click Here</button>
+        </div>
     </div>
-</div>
-<div class="container-fluid" id="about" style="background-color = white">
-    <div class="row" id="landingpage">
+</section>
+
+<div class="container-fluid" style="background-color: white">
+    <div class="container-fluid" style="height: 10vh;"></div>
+    <div class="row">
         <div class="col-md-5">
-            <h1 class="expl" id="e2">[image here]</h1>
+            <h1 class="expl" id="e2" style="color: #07309D">[image here]</h1>
         </div>
         <div class="col-md-7">
-            <h2 class="expl" id="e1">What is Coronavirus?</h2>
-            <h1 class="expl">[line thing]</h1>
+            <h2 class="expl" id="e1" style="color: #07309D">What is Coronavirus?</h2>
+            <div style="height: 10px; width: 15vw; background-color: #68FCCB; border-radius: 20px; margin-left: 10px;"></div>
             <br>
             <ul>
                 <li>A member of the coronavirus family that has never been encountered before</li>
                 <li>Came from animals</li>
                 <li>Is zoonotic (can be transmitted between animals and people)</li>
             </ul>
-            <button id="testBtn">See Details</button>
+            <button type="button" class="collapsible" id="testBtn" style="margin-bottom: 20px;">See Details</button>
+            <div class="content">
+                <p>
+                    Coronaviruses are actually a large family of viruses, but the common one (COVID-19) that has recently 
+                    gone viral in early 2020 has not been identified in humans before.
+
+                    In short, this virus is a member of the large coronavirus family which came from animals. 
+                    Several coronaviruses are circulating in animals that have not yet infected humans. 
+                    Morever, this virus is zoonotic, which means they can be transmitted between animals and people.
+
+                    “Common signs of infection include respiratory symptoms, fever, cough, shortness of breath and breathing difficulties. 
+                    In more severe cases, infection can cause pneumonia, severe acute respiratory syndrome, kidney failure and even death.” 
+                    (World Health Organization)
+                </p>
+            </div>
         </div>
     </div>
 </div>
