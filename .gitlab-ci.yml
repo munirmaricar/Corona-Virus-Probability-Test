@@ -5,7 +5,7 @@ stages:
 
 unit:
   stage: test
-  image: python:3.8.1-alpine
+  image: python:3.6
   before_script:
     - apt-get update -qy
     - apt-get install -y python-dev python-pip
