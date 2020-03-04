@@ -7,7 +7,8 @@ unit:
   stage: test
   image: python:3.8.1-alpine
   before_script:
-    - apk update && apk add postgresql-dev gcc python3-dev musl-dev
+    - apt-get update -qy
+    - apt-get install -y python-dev python-pip
     - pip install -r requirements.txt
     - python manage.py migrate
     - python manage.py collectstatic --noinput
