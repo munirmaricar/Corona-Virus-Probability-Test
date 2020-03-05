@@ -10,4 +10,5 @@
 The links to various items we have created in the development of our application can be seen below:
 
 1.  [GitLab Repository](https://gitlab.com/intelligent-system-1/corona-virus-probability-test)
-2.  [Website Link (**Heroku**)](https://is-group1.herokuapp.com/)
+2.  [Website Prototype](https://www.figma.com/file/yNe0RDJRgMVzdzoTaj4A3u/CORONA-VIRUS-PROBABILITY-TEST?node-id=1%3A2)
+3.  [Website Link (**Heroku**)](https://is-group1.herokuapp.com/)
