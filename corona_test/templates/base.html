@@ -24,7 +24,7 @@
     <div class="collapse navbar-collapse ml-auto" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger yellow-text" href="#about">About</a>
+          <a class="nav-link js-scroll-trigger yellow-text" href="#aboutPage">About</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#prevention">Prevention</a>
@@ -44,7 +44,7 @@
     var i;
 
     for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
+      coll[i].addEventListener("click", function () {
         this.classList.toggle("active");
         var content = this.nextElementSibling;
         if (content.style.display === "block") {

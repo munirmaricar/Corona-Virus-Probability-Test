@@ -9,9 +9,19 @@ body {
     width: 100%;
 }
 
-html, section{
+html,
+section {
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+#aboutPage {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: white;
 }
 
 .navbar {
@@ -105,7 +115,8 @@ html, section{
     font-size: 15px;
 }
 
-.active, .collapsible:hover {
+.active,
+.collapsible:hover {
     background-color: #555;
 }
 
