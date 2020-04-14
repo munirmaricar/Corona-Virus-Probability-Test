@@ -9,25 +9,42 @@ body {
     width: 100%;
 }
 
-html,
-section {
+html {
     height: 100%;
     width: 100%;
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
+/* LANDING PAGE */
+#landingpage {
+    padding-top: 0;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    background-size: 100%;
+}
+
+#homePage {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to left bottom, #00FFA9, #0D4DFF) fixed;
+}
+
 #aboutPage {
     height: 100%;
     width: 100%;
-    overflow-x: hidden;
     background-color: #f2f2f2;
 }
 
 #symptomsPage {
     height: 100%;
     width: 100%;
-    overflow-x: hidden;
+    background-color: #f2f2f2;
+}
+
+#preventionPage {
+    height: 100%;
+    width: 100%;
     background-color: #f2f2f2;
 }
 
