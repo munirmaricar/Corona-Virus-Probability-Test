@@ -10,19 +10,16 @@
         <div class="col-md">
             <h2 class="expl" id="e1">Do you think you are infected with Coronavirus?</h2>
             <h1 class="expl" id="e2">Take this Probability Test now!</h1>
-            <button id="testBtn">Click Here</button>
+            <a href="{% url 'test' %}"><button id="testBtn">Click Here</button></a>
         </div>
     </div>
 </section>
 
 <section id="aboutPage">
-    <div style="background-color: white; padding-top: 50px;">
+    <div style="padding-top: 50px;">
         <!-- <div class="container-fluid" style="height: 10vh;"></div> -->
         <div class="row">
-            <div class="col-md-5">
-                <img src="{% static 'images/sickassbruh.png' %}" style="height: auto; width: 30vw; margin:30px;">
-            </div>
-            <div class="col-md-7">
+            <div class="col-md-7" style="margin-left: 5vw;">
                 <h2 class="expl" id="e1" style="color: #07309D">What is Coronavirus?</h2>
                 <div
                     style="height: 10px; width: 15vw; background-color: #68FCCB; border-radius: 20px; margin-left: 10px;">
@@ -34,7 +31,7 @@
                     <li>Is zoonotic (can be transmitted between animals and people)</li>
                 </ul>
                 <button type="button" class="collapsible" id="testBtn" style="margin-bottom: 20px;">See Details</button>
-                <div class="content" style="margin-right: 50px;">
+                <div class="content" style="margin-right: 5vw;">
                     <p>
                         Coronaviruses are actually a large family of viruses, but the common one (COVID-19) that has
                         recently
@@ -52,7 +49,17 @@
                     </p>
                 </div>
             </div>
-            <!-- </div> -->
+            <div class="col-md-5">
+                <img src="{% static 'images/sickassbruh.png' %}" style="height: auto; width: 30vw; margin-right:30px;">
+            </div>
         </div>
+    </div>
+</section>
+<section id="symptomsPage">
+    <div class="container-fluid" style="height: 7vh"></div>
+    <h2 class="expl" id="e1" style="color: #07309D; text-align: center;">Symptoms</h2>
+    <div
+        style="height: 10px; width: 15vw; background-color: #68FCCB; border-radius: 20px; margin-left: auto; margin-right: auto;">
+    </div>
 </section>
 {% endblock %}
