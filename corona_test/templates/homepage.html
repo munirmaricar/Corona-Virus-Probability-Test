@@ -5,54 +5,74 @@
 <title>Coronavirus Probability Test</title>
 {% endblock %}
 {% block content %}
-<section style="background-size: cover;">
+<section id="homePage" style="background-size: cover;">
     <div class="row one" id="landingpage">
         <div class="col-md">
             <h2 class="expl" id="e1">Do you think you are infected with Coronavirus?</h2>
             <h1 class="expl" id="e2">Take this Probability Test now!</h1>
-            <button id="testBtn">Click Here</button>
+            <a href="{% url 'test' %}"><button id="testBtn">Click Here</button></a>
         </div>
     </div>
 </section>
 
 <section id="aboutPage">
-    <div style="background-color: white; padding-top: 50px;">
-        <!-- <div class="container-fluid" style="height: 10vh;"></div> -->
+    <div style="padding-top: 12vh;">
         <div class="row">
-            <div class="col-md-5">
-                <img src="{% static 'images/sickassbruh.png' %}" style="height: auto; width: 30vw; margin:30px;">
-            </div>
             <div class="col-md-7">
-                <h2 class="expl" id="e1" style="color: #07309D;">What is Coronavirus?</h2>
-                <div
-                    style="height: 10px; width: 15vw; background-color: #68FCCB; border-radius: 20px; margin-left: 10px;">
-                </div>
-                <br>
-                <ul style="margin-left: 30px;">
-                    <li>A member of the coronavirus family that has never been encountered before</li>
-                    <li>Came from animals</li>
-                    <li>Is zoonotic (can be transmitted between animals and people)</li>
-                </ul>
-                <button type="button" class="collapsible" id="testBtn" style="margin-bottom: 20px;">See Details</button>
-                <div class="content" style="margin-right: 50px;">
-                    <p>
-                        Coronaviruses are actually a large family of viruses, but the common one (COVID-19) that has
-                        recently
-                        gone viral in early 2020 has not been identified in humans before.
+                <div style="margin-left: 5vw; margin-top: 2.5vh;">
+                    <h2 class="expl" id="e1" style="color: #07309D;">What is Coronavirus?</h2>
+                    <div
+                        style="height: 10px; width: 15vw; background-color: #68FCCB; border-radius: 20px; margin-left: 10px;">
+                    </div>
+                    <br>
+                    <ul style="margin-left: 1.8vw;">
+                        <li>A member of the coronavirus family that has never been encountered before</li>
+                        <li>Came from animals</li>
+                        <li>Is zoonotic (can be transmitted between animals and people)</li>
+                    </ul>
+                    <button type="button" class="collapsible" id="testBtn"
+                        style="margin-bottom: 20px; text-align: center; padding-top: 8px; padding-bottom: 8px;">See
+                        Details</button>
+                    <div class="content" style="margin-right: 5vw;">
+                        <p>
+                            Coronaviruses are actually a large family of viruses, but the common one (COVID-19) that has
+                            recently
+                            gone viral in early 2020 has not been identified in humans before.
 
-                        In short, this virus is a member of the large coronavirus family which came from animals.
-                        Several coronaviruses are circulating in animals that have not yet infected humans.
-                        Morever, this virus is zoonotic, which means they can be transmitted between animals and people.
+                            In short, this virus is a member of the large coronavirus family which came from animals.
+                            Several coronaviruses are circulating in animals that have not yet infected humans.
+                            Morever, this virus is zoonotic, which means they can be transmitted between animals and
+                            people.
 
-                        “Common signs of infection include respiratory symptoms, fever, cough, shortness of breath and
-                        breathing difficulties.
-                        In more severe cases, infection can cause pneumonia, severe acute respiratory syndrome, kidney
-                        failure and even death.”
-                        (World Health Organization)
-                    </p>
+                            “Common signs of infection include respiratory symptoms, fever, cough, shortness of breath
+                            and
+                            breathing difficulties.
+                            In more severe cases, infection can cause pneumonia, severe acute respiratory syndrome,
+                            kidney
+                            failure and even death.”
+                            (World Health Organization)
+                        </p>
+                    </div>
                 </div>
             </div>
-            <!-- </div> -->
+            <div class="col-md-5">
+                <img src="{% static 'images/sickassbruh.png' %}"
+                    style="height: auto; width: 30vw; margin-top: 8vh; margin-left: 2vw;">
+            </div>
         </div>
+    </div>
+</section>
+<section id="symptomsPage">
+    <div class="container-fluid" style="height: 7vh; font-weight: bolder;"></div>
+    <h2 class="expl" id="e1" style="color: #07309D; margin-left: 5vw; margin-top: 5vh;">Symptoms</h2>
+    <div style="height: 10px; width: 15vw; background-color: #68FCCB; border-radius: 20px; margin-left: 5vw;">
+    </div>
+</section>
+
+<section id="preventionPage">
+    <div class="container-fluid" style="height: 7vh"></div>
+    <h2 class="expl" id="e1" style="color: #07309D; margin-left: 5vw; margin-top: 5vh;">Prevention</h2>
+    <div style="height: 10px; width: 15vw; background-color: #68FCCB; border-radius: 20px; margin-left: 5vw;">
+    </div>
 </section>
 {% endblock %}
