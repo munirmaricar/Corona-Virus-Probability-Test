@@ -3,6 +3,7 @@
 
 {% block title %}
 <title>Coronavirus Probability Test</title>
+<link rel="icon" type="image/gif/png" href="{% static 'images/Coronavirus.png'%}">
 {% endblock %}
 {% block content %}
 <section id="homePage" style="background-size: cover;">
@@ -10,7 +11,25 @@
         <div class="col-md">
             <h2 class="expl" id="e1">Do you think you are infected with Coronavirus?</h2>
             <h1 class="expl" id="e2">Take this Probability Test now!</h1>
-            <a href="{% url 'test' %}"><button id="testBtn">Click Here</button></a>
+            <a class="typeform-share button" href="https://maricarmunirudeen.typeform.com/to/jmYMsH" data-mode="popup"
+            data-hide-headers=true data-hide-footer=true target="_blank"><button id="testBtn">Click Here</button></a>
+        <script>
+            (function () {
+                var qs, js, q, s, d = document,
+                    gi = d.getElementById,
+                    ce = d.createElement,
+                    gt = d.getElementsByTagName,
+                    id = "typef_orm_share",
+                    b = "https://embed.typeform.com/";
+                if (!gi.call(d, id)) {
+                    js = ce.call(d, "script");
+                    js.id = id;
+                    js.src = b + "embed.js";
+                    q = gt.call(d, "script")[0];
+                    q.parentNode.insertBefore(js, q)
+                }
+            })()
+        </script>
         </div>
     </div>
 </section>
@@ -25,11 +44,11 @@
                         style="height: 10px; width: 15vw; background-color: #68FCCB; border-radius: 20px; margin-left: 10px;">
                     </div>
                     <br>
-                    <ul style="margin-left: 1.8vw;">
-                        <li>A member of the coronavirus family that has never been encountered before</li>
-                        <li>Came from animals</li>
-                        <li>Is zoonotic (can be transmitted between animals and people)</li>
-                    </ul>
+                    <h6 style="margin-left: 1.8vw; color: #0D4DFF; line-height: 30px;">
+                        This virus is a member of the coronavirus family that has never been encountered before.
+                        It's spread to humans originated from animal contact, most likely from consuming said animal.
+                        Moreover, this virus is zoonotic which means it can be transmitted between animals and people.
+                    </h6>
                     <button type="button" class="collapsible" id="testBtn"
                         style="margin-bottom: 20px; text-align: center; padding-top: 8px; padding-bottom: 8px;">See
                         Details</button>
@@ -56,7 +75,7 @@
                 </div>
             </div>
             <div class="col-md-5">
-                <img src="{% static 'images/sickassbruh.png' %}"
+                <img src="{% static 'images/Person.png' %}"
                     style="height: auto; width: 30vw; margin-top: 8vh; margin-left: 2vw;">
             </div>
         </div>
@@ -66,6 +85,34 @@
     <div class="container-fluid" style="height: 7vh; font-weight: bolder;"></div>
     <h2 class="expl" id="e1" style="color: #07309D; margin-left: 5vw; margin-top: 5vh;">Symptoms</h2>
     <div style="height: 10px; width: 15vw; background-color: #68FCCB; border-radius: 20px; margin-left: 5vw;">
+    </div>
+    <div class="container" style="margin-top: 10vh;">
+        <div class="row">
+            <div class="col-md">
+                <center><img src="{% static 'images/Fever.png' %}" style="height: auto; width: 15vw;"></center>
+                <h2 class="expl" id="e1"
+                    style="color: #FF9300; margin-top: 2vh; font-size: 25px; font-weight: 900 ; text-align: center;">
+                    Fever</h2>
+            </div>
+            <div class="col-md">
+                <center><img src="{% static 'images/cough.png' %}" style="height: auto; width: 15vw;"></center>
+                <h2 class="expl" id="e1"
+                    style="color: #FF9300; margin-top: 2vh; font-size: 25px; font-weight: 900; text-align: center;">Dry
+                    Cough</h2>
+            </div>
+            <div class="col-md">
+                <center><img src="{% static 'images/throat.png' %}" style="height: auto; width: 15vw;"></center>
+                <h2 class="expl" id="e1"
+                    style="color: #FF9300; margin-top: 2vh; font-size: 25px; font-weight: 900; text-align: center;">Sore
+                    Throat</h2>
+            </div>
+            <div class="col-md">
+                <center><img src="{% static 'images/Headache.png' %}" style="height: auto; width: 15vw;"></center>
+                <h2 class="expl" id="e1"
+                    style="color: #FF9300; margin-top: 2vh; font-size: 25px; font-weight: 900; text-align: center;">
+                    Headache</h2>
+            </div>
+        </div>
     </div>
 </section>
 
