@@ -2,4 +2,4 @@ env/
 .vscode/
 __pycache__/
 staticfiles/
-.DS_Store
+.DS_Store/

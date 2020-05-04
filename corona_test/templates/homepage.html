@@ -6,30 +6,15 @@
 <link rel="icon" type="image/gif/png" href="{% static 'images/Coronavirus.png'%}">
 {% endblock %}
 {% block content %}
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
 <section id="homePage" style="background-size: cover;">
     <div class="row one" id="landingpage">
         <div class="col-md">
             <h2 class="expl" id="e1">Do you think you are infected with Coronavirus?</h2>
             <h1 class="expl" id="e2">Take this Probability Test now!</h1>
-            <a class="typeform-share button" href="https://maricarmunirudeen.typeform.com/to/jmYMsH" data-mode="popup"
-            data-hide-headers=true data-hide-footer=true target="_blank"><button id="testBtn">Click Here</button></a>
-        <script>
-            (function () {
-                var qs, js, q, s, d = document,
-                    gi = d.getElementById,
-                    ce = d.createElement,
-                    gt = d.getElementsByTagName,
-                    id = "typef_orm_share",
-                    b = "https://embed.typeform.com/";
-                if (!gi.call(d, id)) {
-                    js = ce.call(d, "script");
-                    js.id = id;
-                    js.src = b + "embed.js";
-                    q = gt.call(d, "script")[0];
-                    q.parentNode.insertBefore(js, q)
-                }
-            })()
-        </script>
+            <a class="button" href="form" data-mode="popup" data-hide-headers=true data-hide-footer=true><button
+                    id="testBtn">Click
+                    Here</button></a>
         </div>
     </div>
 </section>
@@ -44,7 +29,7 @@
                         style="height: 10px; width: 15vw; background-color: #68FCCB; border-radius: 20px; margin-left: 10px;">
                     </div>
                     <br>
-                    <h6 style="margin-left: 1.8vw; color: #0D4DFF; line-height: 30px;">
+                    <h6 style="margin-left: 0.8vw; color: #0D4DFF; line-height: 30px;">
                         This virus is a member of the coronavirus family that has never been encountered before.
                         It's spread to humans originated from animal contact, most likely from consuming said animal.
                         Moreover, this virus is zoonotic which means it can be transmitted between animals and people.
@@ -86,7 +71,7 @@
     <h2 class="expl" id="e1" style="color: #07309D; margin-left: 5vw; margin-top: 5vh;">Symptoms</h2>
     <div style="height: 10px; width: 15vw; background-color: #68FCCB; border-radius: 20px; margin-left: 5vw;">
     </div>
-    <div class="container" style="margin-top: 10vh;">
+    <div class="container" style="margin-top: 15vh;">
         <div class="row">
             <div class="col-md">
                 <center><img src="{% static 'images/Fever.png' %}" style="height: auto; width: 15vw;"></center>
@@ -116,10 +101,52 @@
     </div>
 </section>
 
-<section id="preventionPage">
+<section id="preventionPage" style="position: relative;">
     <div class="container-fluid" style="height: 7vh"></div>
     <h2 class="expl" id="e1" style="color: #07309D; margin-left: 5vw; margin-top: 5vh;">Prevention</h2>
-    <div style="height: 10px; width: 15vw; background-color: #68FCCB; border-radius: 20px; margin-left: 5vw;">
+    <div style="height: 10px; width: 15vw; background-color: #68FCCB; border-radius: 20px; margin-left: 5vw;"></div>
+    <div class="container" style="margin-top: 5vh;">
+        <div class="row">
+            <div class="col-md">
+                <center>
+                    <div style="height: 245px; width: 311px; border: 1px solid black; border-radius: 20px;">image</div>
+                </center>
+            </div>
+            <div class="col-md">
+                <center>
+                    <div style="height: 245px; width: 311px; border: 1px solid black; border-radius: 20px;">image</div>
+                </center>
+            </div>
+        </div>
     </div>
+    <div class="container" style="margin-top: 5vh;">
+        <div class="row">
+            <div class="col-md">
+                <h2 class="expl" id="e1"
+                    style="color: #FF9300; margin-top: 2vh; font-size: 25px; font-weight: bolder; text-align: center;">
+                    Social Distancing</h2>
+            </div>
+            <div class="col-md">
+                <h2 class="expl" id="e1"
+                    style="color: #FF9300; margin-top: 2vh; font-size: 25px; font-weight: bolder; text-align: center;">
+                    Wear a Mask</h2>
+            </div>
+            <div class="col-md">
+                <h2 class="expl" id="e1"
+                    style="color: #FF9300; margin-top: 2vh; font-size: 25px; font-weight: bolder; text-align: center;">
+                    Wash Your Hands</h2>
+            </div>
+            <div class="col-md">
+                <h2 class="expl" id="e1"
+                    style="color: #FF9300; margin-top: 2vh; font-size: 25px; font-weight: bolder; text-align: center;">
+                    Use Hand Sanitizers</h2>
+            </div>
+        </div>
+    </div>
+    <img class="btm" src="{% static 'images/bottom.png' %}"
+        style="position: absolute; width: 100vw; height: 17vh; bottom:0;">
 </section>
+
+<script type="text/javascript" src="{% static 'js/popper.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 {% endblock %}
