@@ -28,6 +28,4 @@ SQLAlchemy==1.2.10
 sqlparse==0.3.1
 typeform==1.1.0
 urllib3==1.25.8
-virtualenv==20.0.17
-webdriver-manager==2.3.0
-whitenoise==5.0.1
+django-typeform
