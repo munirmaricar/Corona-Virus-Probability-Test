@@ -1,10 +1,35 @@
-<!DOCTYPE html>
+{% load static %}
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Result</title>
-</head>
-<body>
 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+    
+    <!-- Title -->
+    <title>Coronavirus Probability Result</title>
+    <link rel="icon" type="image/gif/png" href="{% static 'images/Coronavirus.png'%}">
+</head>
+
+<body class="results">
+    <div id="testForm" style="padding-top: 15vh;">
+        <center>
+        <h1 class="formQ">The chances of you having Covid-19 is:</h1>
+        <h1 class="testResult" id="testResult">78%</h1>
+        <a href="/#preventionPage" type="submit"><button id="resultBtn" 
+            style="padding-top: 8px; padding-bottom: 8px; margin-bottom: 10vh;">Prevention</button></a>
+        </center>
+    </div>
+
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/popper.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
+
 </html>
