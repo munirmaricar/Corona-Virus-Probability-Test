@@ -1,31 +1,30 @@
 ### Dictionary for all nodes
 # Level 1
-met_diagnosed_person = {"T" : 0.00045, "F" : 0.99955, "X" : 1}
-visited = {"T" : 0.845, "F" : 0.155, "X" : 1}
-fever = {"T" : 0.3, "F" : 0.7, "X" : 1}
+met_diagnosed_person = {"T" : 0.99955, "F" : 0.00045}
+visited = {"T" : 0.845, "F" : 0.155}
+fever = {"T" : 0.3, "F" : 0.7}
 
 # Level 2
 fatigue = {"TT": 0.6, "TF": 0.4,        # Fever - Cold
-           "FT": 0.5, "FF": 0.3,
-           "X": 1}
+           "FT": 0.5, "FF": 0.3}
 
-cold = {"T": 0.5, "F": 0.2, "X": 1}     # Fever               
+cold = {"T": 0.5, "F": 0.2}     # Fever               
 
 # Level 3
-short_breath = {"T": 0.5, "F": 0.5, "X": 1}    # Fatigue
+short_breath = {"T": 0.5, "F": 0.5}    # Fatigue
 
 # Level 4
-cough = {"T": 0.75, "F": 0.375, "X": 1}   # Short breath
+cough = {"T": 0.75, "F": 0.375}   # Short breath
 
 # # Level 5
-# corona = {"TTT": 0.95, "TTF": 0.85,       #  Cough - Met - Visit
-#           "TFT": 0.75, "TFF": 0.4,
-#           "FTT": 0.9, "FTF": 0.8,
-#           "FFT": 0.7, "FFF": 0.05,
-#           "X": 1}
+corona = {"TTT": 0.95, "TTF": 0.85,       #  Cough - Met - Visit
+          "TFT": 0.75, "TFF": 0.4,
+          "FTT": 0.9, "FTF": 0.8,
+          "FFT": 0.7, "FFF": 0.05,
+          "X": 1}
 
-nodes = [fever, cold, fatigue, short_breath, cough, met_diagnosed_perso,  visited corona]
-    
+nodes = [fever, cold, fatigue, short_breath, cough, met_diagnosed_person,  visited]
+
 def get_parent(child):
     if(child == "FATIGUE"):
         return {nodes[0], nodes[3]}
@@ -37,87 +36,76 @@ def get_parent(child):
         return {nodes[5]}
     elif(child == "CORONA"):
         return {nodes[6], nodes[1], nodes[2]}
-    
+        
 def inference(symptoms):
     result = 0
 
-    ## FEVER
-    result *= fever.get(symptoms[0].upper())
+    all_known = True
 
-    ## COLD
-    if(symptoms[1].upper() == "X"):                    
-        result *= 1
-    else:
-        if((symptoms[0].upper() == "T") & (symptoms[1].upper() == "T")):
-            result *= cold.get("T")
-        elif((symptoms[0].upper() == "F") & (symptoms[1].upper() == "T")):
-            result *= cold.get("F")
-        elif((symptoms[0].upper() == "T") & (symptoms[1].upper() == "F")):
-            temp = 1 - cold.get("T")
-            result *= temp
-        elif((symptoms[0].upper() == "F") & (symptoms[1].upper() == "F")):
-            temp = 1 - cold.get("F")
-            result *= temp
+    for i in symptoms:
+        if(all_known and i == "X"):
+            all_known = False
+            break
     
-    ## FATIGUE
-    if(symptoms[2].upper() == "X"):                    
-        result *=  1
+    if(all_known):
+        corona_string = symptoms[4] + symptoms[5] + symptoms[6]
+        result = corona[corona_string]
+        return result
     else:
-        if((symptoms[0].upper() == "T") & (symptoms[1].upper() == "T") & (symptoms[2].upper() == "T")):
-            result *= fatigue.get("TT")
-        elif((symptoms[0].upper() == "F") & (symptoms[1].upper() == "T") & (symptoms[2].upper() == "T")):
-            result *= fatigue.get("FT")
-        elif((symptoms[0].upper() == "T") & (symptoms[1].upper() == "F") & (symptoms[2].upper() == "T")):
-            result *= fatigue.get("TF")
-        elif((symptoms[0].upper() == "F") & (symptoms[1].upper() == "F") & (symptoms[2].upper() == "T")):
-            result *= fatigue.get("FF")
-        elif((symptoms[0].upper() == "T") & (symptoms[1].upper() == "T") & (symptoms[2].upper() == "F")):
-            temp = 1 - fatigue.get("TT")
-            result *= temp
-        elif((symptoms[0].upper() == "F") & (symptoms[1].upper() == "T") & (symptoms[2].upper() == "F")):
-            temp = 1 - fatigue.get("FT")
-            result *= temp
-        elif((symptoms[0].upper() == "T") & (symptoms[1].upper() == "F") & (symptoms[2].upper() == "F")):
-            temp = 1 - fatigue.get("TF")
-            result *= temp
-        elif((symptoms[0].upper() == "F") & (symptoms[1].upper() == "F") & (symptoms[2].upper() == "F")):
-            temp = 1 - fatigue.get("FF")
-            result *= temp
-            
-    ## SHORT BREATH
-    if(symptoms[3].upper() == "X"):                    
-        result *= 1
-    else:
-        if((symptoms[2].upper() == "T" & (symptoms[3].upper() == "T")):
-            result *= short_breath.get("T")
-        elif((symptomm[2].upper() == "F" & (symptoms[3].upper() == "T")):
-            result *= short_breath.get("F")
-        elif((symptomm[2].upper() == "T" & (symptoms[3].upper() == "F")):
-            temp = 1 - short_breath.get("T")
-            result *= temp
-        elif((symptoms[2].upper() == "F") & (symptoms[3].upper() == "F")):
-            temp = 1 - short_breath.get("F")
-            result *= temp
-    
-    ## COUGH
-    if(symptoms[4].upper() == "X"):                    
-        result *= 1
-    else:
-        if((symptoms[3].upper()) == "T") & (symptoms[4].upper()) == "T")):
-            result *= cough.get("T")
-        elif((symptoms[3].upper() == "F") & (symptoms[4].upper() == "T")):
-            result *= cough.get("F")
-        elif((symptoms[3].upper() == "T") & (symptoms[4].upper() == "F")):
-            temp = 1 - cough.get("T")
-            result *= temp
-        elif((symptoms[3].upper() == "F") & (symptoms[4].upper() == "F")):
-            temp = 1 - cough.get("F")
-            result *= temp
-    
-    ## MET
-    result *= met_diagnosed_person.get(symptoms[5].upper())                
+        symptoms_dict = {"fever":symptoms[0], "cold":symptoms[1], "fatigue":symptoms[2], "short_breath":symptoms[3],
+                         "cough":symptoms[4], "met_diagnosed_person":symptoms[5], "visited":symptoms[6]}
+        value = ["T", "F"]
+        array_result = []
+        array_length = 0
 
-    ## VISIT
-    result *= visited.get(symptoms[6].upper())                             
-    
+        for i in symptoms_dict:
+            if symptoms_dict[i] == "X":
+                array_result.append(value)
+            else:
+                array_result.append([symptoms_dict[i]])
+
+        # print(array_result)
+        for i in range(len(array_result[0])):                                   # fever T, F
+            for j in range(len(array_result[1])):                               # cold  T, F
+                for k in range(len(array_result[2])):                           # fatigue   TT, TF, FT, FF
+                    for l in range(len(array_result[3])):                       # short breath  T, F
+                        for m in range(len(array_result[4])):                   # cough T, F
+                            for n in range(len(array_result[5])):               # met   T, F
+                                for o in range(len(array_result[6])):           # visit T, F
+                                    # print(array_result[0][i] + array_result[1][j] + array_result[2][k] + array_result[3][l] + array_result[4][m] + array_result[5][n] + array_result[6][o])
+                                    # P(fever)
+                                    fever_value = fever[array_result[0][i]]         
+
+                                    # P(cold|fever)
+                                    if(array_result[1][j] == "T"):
+                                        cold_value = cold[array_result[0][i]]           
+                                    else:
+                                        cold_value = 1 - cold[array_result[0][i]]
+                                    
+                                    # P(fatigue|fever, cold)
+                                    if(array_result[2][k] == "T"):
+                                        fatigue_value = fatigue[array_result[0][i] + array_result[1][j]]
+                                    else:
+                                        fatigue_value = 1 - fatigue[array_result[0][i] + array_result[1][j]]
+
+                                    # P(short_breath|fatigue)
+                                    if(array_result[3][l] == "T"):
+                                        short_breath_value = short_breath[array_result[2][k]]
+                                    else:
+                                        short_breath_value = 1 - short_breath[array_result[2][k]]
+                                    
+                                    # P(cough|short_breath)
+                                    if(array_result[4][m] == "T"):
+                                        cough_value = cough[array_result[3][l]]
+                                    else:
+                                        cough_value = 1 - cough[array_result[3][l]]
+                                    
+                                    # P(met)
+                                    met_value = met_diagnosed_person[array_result[5][n]]
+                                    
+                                    # P(visit)
+                                    visit_value = visited[array_result[6][o]]
+                                    
+                                    # P(corona|cough, met, visit)
+                                    result += fever_value * cold_value * fatigue_value * short_breath_value * cough_value * met_value * visit_value                       
     return result

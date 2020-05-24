@@ -10,13 +10,19 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+
+    <!-- Title -->
+    <title>Coronavirus Probability Test</title>
+    <link rel="icon" type="image/gif/png" href="{% static 'images/Coronavirus.png'%}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <div id="testForm">
+<body style="padding: 0; overflow-y: hidden;">
+    <div id="testForm" style="margin: 7vh 7vw;">
         <form method='POST'>
             {% csrf_token %}
-            <div class="form-row" style="padding-left: 10%; padding-right: 10%; padding-top: 5%;">
+            <div class="form-row" style="padding-left: 5%; padding-right: 5%; padding-top: 5%;">
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-6">
@@ -24,18 +30,11 @@
                                 is your body temperature hotter than usual?</p>
                         </div>
                         <div class="col-md-1"></div>
-                        <div class="col-md">
-                            <input type="radio" id="yes" name="fever" value="T">
-                            <label for="yes">Yes</label><br>
+                        {% for i in form.fever %}
+                        <div class="col-md" id="fever0">
+                            {{i}}
                         </div>
-                        <div class="col-md">
-                            <input type="radio" id="no" name="fever" value="F">
-                            <label for="no">No</label><br>
-                        </div>
-                        <div class="col-md">
-                            <input type="radio" id="idk" name="fever" value="X">
-                            <label for="idk">Not Sure</label>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="form-group">
@@ -44,18 +43,11 @@
                             <p class="formQ">Do you have a cold?</p>
                         </div>
                         <div class="col-md-1"></div>
-                        <div class="col-md">
-                            <input type="radio" id="yes" name="cold" value="T">
-                            <label for="yes">Yes</label><br>
+                        {% for i in form.cold %}
+                        <div class="col-md" id="fever0">
+                            {{i}}
                         </div>
-                        <div class="col-md">
-                            <input type="radio" id="no" name="cold" value="F">
-                            <label for="no">No</label><br>
-                        </div>
-                        <div class="col-md">
-                            <input type="radio" id="idk" name="cold" value="X">
-                            <label for="idk">Not Sure</label>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="form-group">
@@ -64,18 +56,11 @@
                             <p class="formQ">Do you experience fatigue?</p>
                         </div>
                         <div class="col-md-1"></div>
-                        <div class="col-md">
-                            <input type="radio" id="yes" name="fatigue" value="T">
-                            <label for="yes">Yes</label><br>
+                        {% for i in form.fatigue %}
+                        <div class="col-md" id="fever0">
+                            {{i}}
                         </div>
-                        <div class="col-md">
-                            <input type="radio" id="no" name="fatigue" value="F">
-                            <label for="no">No</label><br>
-                        </div>
-                        <div class="col-md">
-                            <input type="radio" id="idk" name="fatigue" value="X">
-                            <label for="idk">Not Sure</label>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="form-group">
@@ -84,18 +69,11 @@
                             <p class="formQ">Do you cough more often lately?</p>
                         </div>
                         <div class="col-md-1"></div>
-                        <div class="col-md">
-                            <input type="radio" id="yes" name="cough" value="T">
-                            <label for="yes">Yes</label><br>
+                        {% for i in form.cough %}
+                        <div class="col-md" id="fever0">
+                            {{i}}
                         </div>
-                        <div class="col-md">
-                            <input type="radio" id="no" name="cough" value="F">
-                            <label for="no">No</label><br>
-                        </div>
-                        <div class="col-md">
-                            <input type="radio" id="idk" name="cough" value="X">
-                            <label for="idk">Not Sure</label>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="form-group">
@@ -104,18 +82,11 @@
                             <p class="formQ">Do you experience shortness of breath?</p>
                         </div>
                         <div class="col-md-1"></div>
-                        <div class="col-md">
-                            <input type="radio" id="yes" name="breath" value="T">
-                            <label for="yes">Yes</label><br>
+                        {% for i in form.short_breath %}
+                        <div class="col-md" id="fever0">
+                            {{i}}
                         </div>
-                        <div class="col-md">
-                            <input type="radio" id="no" name="breath" value="F">
-                            <label for="no">No</label><br>
-                        </div>
-                        <div class="col-md">
-                            <input type="radio" id="idk" name="breath" value="X">
-                            <label for="idk">Not Sure</label>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="form-group">
@@ -126,54 +97,32 @@
                                 Coronavirus?</p>
                         </div>
                         <div class="col-md-1"></div>
-                        <div class="col-md">
-                            <input type="radio" id="yes" name="contact" value="T">
-                            <label for="yes">Yes</label><br>
+                        {% for i in form.met_positive_person %}
+                        <div class="col-md" id="fever0">
+                            {{i}}
                         </div>
-                        <div class="col-md">
-                            <input type="radio" id="no" name="contact" value="F">
-                            <label for="no">No</label><br>
-                        </div>
-                        <div class="col-md">
-                            <input type="radio" id="idk" name="contact" value="X">
-                            <label for="idk">Not Sure</label>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="form-group" style="margin-bottom: 0;">
                     <div class="row">
-                        <div class="col-md-5" style="margin-right: 5vw;">
+                        <div class="col-md-6" style="margin-right: 5vw;">
                             <p class="formQ">Which of the following countries have you
                                 visited in the past months?</p>
                         </div>
+                        {% for i in form.countries %}
                         <div class="col-md">
-                            <input type="checkbox" id="uk" name="country" value="uk">
-                            <label for="uk">UK</label><br>
+                            {{ i }}
                         </div>
-                        <div class="col-md">
-                            <input type="checkbox" id="spain" name="country" value="spain">
-                            <label for="spain">Spain</label><br>
-                        </div>
-                        <div class="col-md">
-                            <input type="checkbox" id="china" name="country" value="china">
-                            <label for="china">China</label>
-                        </div>
-                        <div class="col-md">
-                            <input type="checkbox" id="usa" name="country" value="usa">
-                            <label for="usa">USA</label>
-                        </div>
-                        <div class="col-md">
-                            <input type="checkbox" id="italy" name="country" value="italy">
-                            <label for="italy">Italy</label>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-9"></div>
                 <div class="col-md-3">
-                    <a href="/result" class="btn submit" type="submit"><button id="testBtn"
-                            style="padding-top: 8px; padding-bottom: 8px; margin-bottom: 5vh; margin-top: 2vh;">Submit</button></a>
+                    <button class="btn submit" id="testBtn"
+                            style="padding-top: 8px; padding-bottom: 8px; margin-bottom: 5vh; margin-top: 2vh;" type="submit">Submit</button>
                 </div>
             </div>
         </form>
@@ -183,20 +132,20 @@
     <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
     <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
+        // var coll = document.getElementsByClassName("collapsible");
+        // var i;
 
-        for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
-        }
+        // for (i = 0; i < coll.length; i++) {
+        //     coll[i].addEventListener("click", function () {
+        //         this.classList.toggle("active");
+        //         var content = this.nextElementSibling;
+        //         if (content.style.display === "block") {
+        //             content.style.display = "none";
+        //         } else {
+        //             content.style.display = "block";
+        //         }
+        //     });
+        // }
     </script>
 </body>
 
