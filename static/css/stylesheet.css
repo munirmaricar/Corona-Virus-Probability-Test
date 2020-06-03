@@ -41,29 +41,29 @@ html#home {
 #aboutPage {
     height: 100%;
     width: 100%;
-    background-color: #f2f2f2;
+    background-color: #f9f9f9;
 }
 
 #symptomsPage {
     height: 100%;
     width: 100%;
-    background-color: #f2f2f2;
+    background-color: #f9f9f9;
 }
 
 #preventionPage {
     height: 100%;
     width: 100%;
-    background-color: #f2f2f2;
+    background-color: #f9f9f9;
 }
 
 .navbar {
-    background-color: #f2f2f2;
+    background-color: #f9f9f9;
 }
 
 .navbar-toggler {
     margin: 20px 20px 20px 10px;
-    border-color: #f2f2f2;
-    background-color: #f2f2f2;
+    border-color: #f9f9f9;
+    background-color: #f9f9f9;
     float: right;
 }
 
@@ -76,7 +76,7 @@ html#home {
     float: right;
     margin: 10px;
     padding: 10px 10px;
-    width: 130px;
+    width: fit-content;
     height: auto;
 
     text-align: center;
@@ -132,7 +132,7 @@ html#home {
     padding: 0.5% 2%;
 
     background-color: white;
-    border-color: #f2f2f2;
+    border-color: #f9f9f9;
     border-radius: 30px;
     width: 200px;
 
@@ -173,9 +173,62 @@ html#home {
     padding: 15px;
     display: none;
     overflow: hidden;
-    background-color: #E9E9E9;
+    background-color: #e3e3e3;
     border-radius: 20px;
 }
+
+#e1 {
+    color: #FF9300;
+    margin-top: 3vh;
+    margin: 10px;
+    font-size:25px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+#e3 {
+    background-color: #FF9300;
+    border-radius: 30px;
+    color: white;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 3vh;
+    margin: 10px;
+    font-size:25px;
+    font-weight: bolder;
+    text-align: center;
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+#e3:hover {
+    box-shadow: inset 3px 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+#e4 {
+    background-color: #6CA9F7;
+    border-radius: 30px;
+    color: white;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 3vh;
+    margin: 10px;
+    font-size:25px;
+    font-weight: bolder;
+    text-align: center;
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+#e4:hover {
+    box-shadow: inset 3px 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+a {
+    text-decoration: none !important;
+}
+
+
+
+
 
 #testForm {
     background-color: white;
@@ -192,10 +245,6 @@ html#home {
 
 .form-group {
     width: 100%;
-}
-
-.yesNoIdk{
-    margin-right: 10%;
 }
 
 .formQ {
