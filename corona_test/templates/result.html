@@ -10,8 +10,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Open+Sans&family=Roboto:wght@500&display=swap" rel="stylesheet"> -->
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Open+Sans&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+
     <!-- Title -->
     <title>Coronavirus Probability Result</title>
     <link rel="icon" type="image/gif/png" href="{% static 'images/Coronavirus.png'%}">
@@ -20,10 +22,14 @@
 <body class="results" style="overflow-y: hidden;">
     <div id="testForm" style="padding-top: 12vh; margin-top: 40px; margin-bottom: 40px">
         <center>
-        <h1 class="formQ">The chances of you having COVID-19 is:</h1>
-        <h1 class="testResult" id="testResult">{{ result }}%</h1>
-        <a class="button" href="/#preventionPage" data-mode="popup" data-hide-headers=true data-hide-footer=true><button
-                id="testBtn" style="margin-bottom: 10vh; font-weight: bold;">Prevention</button></a>
+            <h1 class="formQ">The chances of you having COVID-19 is:</h1>
+            <h1 class="testResult" id="testResult">{{ result }}%</h1>
+            <a class="button" href="/#preventionPage" data-mode="popup" data-hide-headers=true
+                data-hide-footer=true><button id="testBtn"
+                    style="margin-bottom: 10vh; font-weight: bold;">Prevention</button></a>
+            <a class="button" href="form" data-mode="popup" data-hide-headers=true data-hide-footer=true><button
+                    id="testBtn" style="margin-bottom: 10vh; margin-left: 50px; font-weight: bold;">Retake
+                    Test</button></a>
         </center>
     </div>
 
@@ -32,4 +38,5 @@
     <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
+
 </html>
